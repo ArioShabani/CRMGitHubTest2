@@ -1,0 +1,26 @@
+﻿# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.env
+.venv/
+
+# Node
+crm-starter/frontend/node_modules/
+crm-starter/frontend/dist/
+crm-starter/frontend/.vite/
+crm-starter/frontend/.env*
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/
+.idea/
+
+# Misc
+*.log
+coverage/
+.pytest_cache/

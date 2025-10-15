@@ -1,0 +1,29 @@
+version: "3.9"
+services:
+  backend:
+    build:
+      context: ..
+      dockerfile: docker/backend.Dockerfile
+    working_dir: /app
+    environment:
+      - UVICORN_HOST=0.0.0.0
+    ports:
+      - "8000:8000"
+    volumes:
+      - ../backend:/app
+  frontend:
+    build:
+      context: ..
+      dockerfile: docker/frontend.Dockerfile
+    working_dir: /srv
+    environment:
+      - VITE_API_BASE=http://localhost:8000/api
+    ports:
+      - "5173:5173"
+    volumes:
+      - ../frontend:/srv
+    depends_on:
+      - backend
+
+
+
